@@ -1,0 +1,51 @@
+CREATE DATABASE rush00;
+use rush00;
+
+CREATE TABLE passwd (
+id INT PRIMARY KEY NOT NULL UNIQUE AUTO_INCREMENT,
+login VARCHAR(16) NOT NULL DEFAULT 'empty',
+passwd VARCHAR(129) NOT NULL DEFAULT 'empty');
+
+CREATE TABLE products (
+id INT PRIMARY KEY NOT NULL UNIQUE AUTO_INCREMENT,
+name VARCHAR(20) NOT NULL DEFAULT 'empty',
+description VARCHAR(3000) NOT NULL DEFAULT 'empty',
+pic VARCHAR(100) NOT NULL DEFAULT 'empty',
+price DECIMAL(6,2) NOT NULL DEFAULT 0,
+stock INT NOT NULL DEFAULT 0);
+
+CREATE TABLE categories (
+id INT PRIMARY KEY NOT NULL UNIQUE AUTO_INCREMENT,
+name VARCHAR(20) NOT NULL DEFAULT 'empty');
+
+CREATE TABLE prodincat (
+id INT PRIMARY KEY NOT NULL UNIQUE AUTO_INCREMENT,
+id_prod INT NOT NULL,
+name_cat VARCHAR(20) NOT NULL DEFAULT 'empty');
+
+CREATE TABLE commandes (
+id INT PRIMARY KEY NOT NULL UNIQUE AUTO_INCREMENT,
+name VARCHAR(20) NOT NULL DEFAULT 'empty');
+
+CREATE TABLE commandes_desc (
+id INT PRIMARY KEY NOT NULL UNIQUE AUTO_INCREMENT,
+id_commande INT NOT NULL,
+id_prod INT NOT NULL,
+nbr INT NOT NULL);
+
+INSERT INTO passwd (login, passwd) VALUE ('admin', '6a4e012bd9583858a5a6fa15f58bd86a25af266d3a4344f1ec2018b778f29ba83be86eb45e6dc204e11276f4a99eff4e2144fbe15e756c2c88e999649aae7d94');
+
+INSERT INTO categories (name) VALUES ('gaming');
+INSERT INTO categories (name) VALUES ('jeu');
+INSERT INTO categories (name) VALUES ('jouet');
+
+INSERT INTO products (name, description, pic, price, stock) VALUES ('Platronics RIG', 'superbe casque audio, bonne qualite', 'img/platronicRIG.png', 200, 120);
+INSERT INTO products (name, description, pic, price, stock) VALUES ('Times Up', 'jeu de societe familial', 'img/time-s-up.jpg', 12, 420);
+INSERT INTO products (name, description, pic, price, stock) VALUES ('Breath of the Wild', 'The legend of Zelda Breath of the Wild pour nintendo switch', 'img/The-Legend-of-Zelda-Breath-of-the-Wild-Nintendo-Switch.jpg', 59, 10);
+INSERT INTO products (name, description, pic, price, stock) VALUES ('Mr Patate', 'jeu pour enfant Mr Patate', 'img/mr-patate.jpg', 10, 0);
+
+INSERT INTO prodincat (id_prod, name_cat) VALUES (1, 'gaming');
+INSERT INTO prodincat (id_prod, name_cat) VALUES (2, 'jeu');
+INSERT INTO prodincat (id_prod, name_cat) VALUES (3, 'gaming');
+INSERT INTO prodincat (id_prod, name_cat) VALUES (3, 'jeu');
+INSERT INTO prodincat (id_prod, name_cat) VALUES (4, 'jouet');

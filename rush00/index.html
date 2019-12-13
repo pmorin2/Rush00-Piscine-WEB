@@ -1,0 +1,52 @@
+
+<html><head>
+	<title>Aminzon</title>
+	<style>
+body {white-space: nowrap; background-color: gray; padding-top: 68px;}
+div.header {height: 68px; width: 100%; top: 0; left: 0; position: fixed; background-color: orange;}
+
+.example_c {
+color: black !important;
+text-decoration: none;
+background: darkgray;
+padding: 5px;
+display: inline-block;
+transition: all 0.4s ease 0s;
+margin-top: -5px;
+}
+.add {border: 2px solid black !important;}
+.example_c:hover {
+color: #ffffff !important;
+background: black;
+border-color: black !important;
+transition: all 0.4s ease 0s;
+}
+
+div.panier {text-align: right; margin-right: -3px; float: right;}
+a.panier {padding: 5px 15px; font-size: 20px; font-weight: bold; border: 3px solid black; width: 170px; text-align: center;}
+div.retour {text-align: left; margin-left: -3px;}
+a.retour {padding: 5px 15px; font-size: 20px; font-weight: bold; border: 3px solid black; width: 95px; text-align: center;}
+div.deco {text-align: left; margin-left: -3px;}
+a.deco {padding: 5px 15px; font-size: 20px; font-weight: bold; border: 3px solid black; width: 95px; text-align: center;}
+div.creer {text-align: left; margin-left: -3px;}
+a.creer {padding: 5px 10px; font-size: 20px; font-weight: bold; border: 3px solid black; width: 145px; text-align: center;}
+div.mod {text-align: left; margin-left: -3px; margin-top: 2px;}
+a.mod {padding: 5px 10px; font-size: 20px; font-weight: bold; border: 3px solid black; width: 170px; text-align: center;}
+.formulaire {padding-top: 16px; font-size: 20px; font-weight: bold;}
+input {border: 2px solid black; font-size: 15px; font-weight: bold;}
+	</style>
+</head>
+<body>
+<div class="header">
+		<div class="button_cont panier" align="center"><a class="example_c panier" href="website/panier.php" rel="nofollow noopener">afficher le panier</a></div>
+		<div class="button_cont retour" align="center"><a class="example_c retour" href="website/main.php" rel="nofollow noopener">accueil</a></div>
+		<div class="button_cont deco" align="center"><a class="example_c deco" href="index.html" rel="nofollow noopener">conexion</a></div>
+<form class="formulaire" action="login.php" method="post">
+	Identifiant: <input type="text" name="login"/>
+	<br />
+	Mot de passe: <input type="password" name="passwd"/>
+	<input type="submit" name="submit" value="OK"/>
+</form>
+<div class="button_cont creer" align="center"><a class="example_c creer" href="create.html" rel="nofollow noopener">Creer un compte</a></div>
+<div class="button_cont mod" align="center"><a class="example_c mod" href="modif.html" rel="nofollow noopener">Modifier un compte</a></div>
+</body></html>
